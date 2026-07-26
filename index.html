@@ -89,11 +89,16 @@
     >
       <!-- Left: Logo/Home -->
       <div class="flex items-center gap-2">
-        <div
-          class="w-8 h-8 rounded-lg bg-gradient-to-tr from-[var(--color-primary)] to-[var(--color-accent)] flex items-center justify-center neon-border-glow"
+        <video
+          class="w-10 h-10 object-cover p-0.5 rounded-full bg-gradient-to-tr from-[var(--color-primary)] to-[var(--color-accent)] flex items-center justify-center neon-border-glow"
+          autoplay
+          muted
+          loop
+          playsinline
         >
-          <i class="fa-solid fa-bolt text-xs text-white"></i>
-        </div>
+          <!-- <source src="assets/logo.webm" type="video/webm" /> -->
+          <source src="assets/img/wlee.mp4" type="video/mp4" />
+        </video>
         <span
           class="font-gaming font-black text-sm tracking-widest bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent"
           >Kaze Rush</span
