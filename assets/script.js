@@ -269,9 +269,9 @@ function initSchedule() {
     {
       day: 1,
       name: "Senin",
-      morning: "05:30 - 08:00 WIB+",
-      liveStart: "05:30",
-      liveEnd: "08:00",
+      morning: "19:45 - 22:00 WIB+",
+      liveStart: "19:45",
+      liveEnd: "22:00",
       topicMorning: "Racing Master (Rutin)",
       night: "Malam: Kadang-kadang",
       topicNight: "Game Lain (Jarang RM)",
