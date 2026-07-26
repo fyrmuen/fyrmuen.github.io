@@ -14,7 +14,7 @@ const state = {
     "Huahahahahaha! Welcome to the arena!",
     "Racing Master mabar? Chat WhatsApp langsung!",
     "Saweria dulu gan, biar semangat ngedriftnya! ✌️😁",
-    "Subscribe YouTube @XRMenz, jangan sampai ketinggalan!",
+    "Subscribe YouTube @kaze_rush, jangan sampai ketinggalan!",
     "Karisma nomor satu, skill nomor dua. Huahaha!",
     "Mohon maaf, instagram masih otw dibuat! 😣",
     "Fokus ngedrift, tikungan tajam didepan!",
@@ -33,11 +33,11 @@ const clubs = {
     joinType: "whatsapp",
     joinLink:
       "https://wa.me/6285798047422?text=" +
-      encodeURIComponent(`Halo Admin Empire GT 🤗
+      encodeURIComponent(`Halo Admin Empire GT 
 Saya ingin bergabung ke Club Empire GT.
-Saya mendapatkan informasi Open Member dari TikTok XMenz.
+Saya mendapatkan informasi Open Member dari TikTok Bang Kaze Rush.
 Mohon informasi lebih lanjut mengenai proses pendaftaran.
-Terima kasih. 🙏`),
+Terima kasih. `),
     discord: "https://discord.gg/NSaSaUVBq",
     rules: [
       "Change Name : GT1“(name)",
@@ -55,11 +55,11 @@ Terima kasih. 🙏`),
     joinLink: "https://irmc.club/daftar",
     discord: "https://discord.gg/dfw73c689",
     rules: ["Change Name : IRMC〆(Name)", "NO Toxic", "NO 18++", "NO SARA"],
-    message: `Halo Admin IRMC 🤗
+    message: `Halo Admin IRMC 
 Saya ingin bergabung ke Club IRMC.
-Saya mendapatkan informasi Open Member dari TikTok XMenz.
+Saya mendapatkan informasi Open Member dari TikTok Bang Kaze Rush.
 Mohon informasi lebih lanjut mengenai proses pendaftaran.
-Terima kasih. 🙏`,
+Terima kasih. `,
   },
 };
 
