@@ -269,7 +269,9 @@ function initSchedule() {
     {
       day: 1,
       name: "Senin",
-      morning: "00:00 - 08:00 WIB+",
+      morning: "05:30 - 08:00 WIB+",
+      liveStart: "05:30",
+      liveEnd: "08:00",
       topicMorning: "Racing Master (Rutin)",
       night: "Malam: Kadang-kadang",
       topicNight: "Game Lain (Jarang RM)",
@@ -278,7 +280,9 @@ function initSchedule() {
     {
       day: 2,
       name: "Selasa",
-      morning: "00:00 - 08:00 WIB+",
+      morning: "05:30 - 08:00 WIB+",
+      liveStart: "05:30",
+      liveEnd: "08:00",
       topicMorning: "Racing Master (Rutin)",
       night: "Malam: Kadang-kadang",
       topicNight: "Game Lain (Jarang RM)",
@@ -287,7 +291,9 @@ function initSchedule() {
     {
       day: 3,
       name: "Rabu",
-      morning: "00:00 - 08:00 WIB+",
+      morning: "05:30 - 08:00 WIB+",
+      liveStart: "05:30",
+      liveEnd: "08:00",
       topicMorning: "Racing Master (Rutin)",
       night: "Malam: Kadang-kadang",
       topicNight: "Game Lain (Jarang RM)",
@@ -296,7 +302,9 @@ function initSchedule() {
     {
       day: 4,
       name: "Kamis",
-      morning: "00:00 - 08:00 WIB+",
+      morning: "05:30 - 08:00 WIB+",
+      liveStart: "05:30",
+      liveEnd: "08:00",
       topicMorning: "Racing Master (Rutin)",
       night: "Malam: Kadang-kadang",
       topicNight: "Game Lain (Jarang RM)",
@@ -305,7 +313,9 @@ function initSchedule() {
     {
       day: 5,
       name: "Jumat",
-      morning: "00:00 - 08:00 WIB+",
+      morning: "05:30 - 08:00 WIB+",
+      liveStart: "05:30",
+      liveEnd: "08:00",
       topicMorning: "Racing Master (Rutin)",
       night: "Malam: Kadang-kadang",
       topicNight: "Game Lain (Jarang RM)",
@@ -314,7 +324,9 @@ function initSchedule() {
     {
       day: 6,
       name: "Sabtu",
-      morning: "00:00 - 08:00 WIB+",
+      morning: "15:30 - 00:00 WIB+",
+      liveStart: "15:30",
+      liveEnd: "00:00",
       topicMorning: "Racing Master (Rutin)",
       night: "Malam: Kadang-kadang",
       topicNight: "Racing Master / Game Lain",
@@ -323,13 +335,34 @@ function initSchedule() {
     {
       day: 0,
       name: "Minggu",
-      morning: "00:00 - 08:00 WIB+",
+      morning: "05:30 - 08:00 WIB+",
+      liveStart: "05:30",
+      liveEnd: "08:00",
       topicMorning: "Racing Master (Rutin)",
       night: "Malam: Kadang-kadang",
       topicNight: "Racing Master / Game Lain",
       desc: "Weekend: Kadang ekstra live RM!",
     },
   ];
+
+  function isCurrentLive(start, end) {
+    const now = new Date();
+
+    const currentMinutes = now.getHours() * 60 + now.getMinutes();
+
+    const [startH, startM] = start.split(":").map(Number);
+    const [endH, endM] = end.split(":").map(Number);
+
+    const startMinutes = startH * 60 + startM;
+    const endMinutes = endH * 60 + endM;
+
+    // kalau lewat tengah malam
+    if (endMinutes < startMinutes) {
+      return currentMinutes >= startMinutes || currentMinutes < endMinutes;
+    }
+
+    return currentMinutes >= startMinutes && currentMinutes < endMinutes;
+  }
 
   const scheduleGrid = document.getElementById("schedule-grid");
   if (!scheduleGrid) return;
@@ -343,10 +376,7 @@ function initSchedule() {
     const isToday = sched.day === currentDay;
 
     // Check if morning stream is active (00:00 - 08:00 WIB)
-    let isLiveNow = false;
-    if (isToday && currentHour >= 0 && currentHour < 8) {
-      isLiveNow = true;
-    }
+    const isLiveNow = isToday && isCurrentLive(sched.liveStart, sched.liveEnd);
 
     const card = document.createElement("div");
     card.className = `p-4 rounded-xl border transition-all duration-300 flex flex-col justify-between ${
