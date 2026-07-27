@@ -29,6 +29,7 @@ const clubs = {
   empire: {
     img: "assets/img/empiregt.png",
     name: "Empire GT",
+    isHoliday: false, // libur atau enggak
     status: "open",
     joinType: "whatsapp",
     joinLink:
@@ -50,6 +51,7 @@ Terima kasih. `),
   irmc: {
     img: "assets/img/irmc.png",
     name: "IRMC",
+    isHoliday: false, // libur atau enggak
     status: "open",
     joinType: "website",
     joinLink: "https://irmc.club/daftar",
@@ -269,6 +271,7 @@ function initSchedule() {
     {
       day: 1,
       name: "Senin",
+      isHoliday: true, // libur atau enggak
       morning: "19:45 - 22:00 WIB+",
       liveStart: "19:45",
       liveEnd: "22:00",
@@ -280,6 +283,7 @@ function initSchedule() {
     {
       day: 2,
       name: "Selasa",
+      isHoliday: true, // libur atau enggak
       morning: "05:30 - 08:00 WIB+",
       liveStart: "05:30",
       liveEnd: "08:00",
@@ -291,6 +295,7 @@ function initSchedule() {
     {
       day: 3,
       name: "Rabu",
+      isHoliday: false, // libur atau enggak
       morning: "05:30 - 08:00 WIB+",
       liveStart: "05:30",
       liveEnd: "08:00",
@@ -302,6 +307,7 @@ function initSchedule() {
     {
       day: 4,
       name: "Kamis",
+      isHoliday: false, // libur atau enggak
       morning: "05:30 - 08:00 WIB+",
       liveStart: "05:30",
       liveEnd: "08:00",
@@ -313,6 +319,7 @@ function initSchedule() {
     {
       day: 5,
       name: "Jumat",
+      isHoliday: false, // libur atau enggak
       morning: "05:30 - 08:00 WIB+",
       liveStart: "05:30",
       liveEnd: "08:00",
@@ -324,6 +331,7 @@ function initSchedule() {
     {
       day: 6,
       name: "Sabtu",
+      isHoliday: false, // libur atau enggak
       morning: "15:30 - 00:00 WIB+",
       liveStart: "15:30",
       liveEnd: "00:00",
@@ -335,6 +343,7 @@ function initSchedule() {
     {
       day: 0,
       name: "Minggu",
+      isHoliday: false, // libur atau enggak
       morning: "05:30 - 08:00 WIB+",
       liveStart: "05:30",
       liveEnd: "08:00",
@@ -376,7 +385,10 @@ function initSchedule() {
     const isToday = sched.day === currentDay;
 
     // Check if morning stream is active (00:00 - 08:00 WIB)
-    const isLiveNow = isToday && isCurrentLive(sched.liveStart, sched.liveEnd);
+    const isLiveNow =
+      !sched.isHoliday &&
+      isToday &&
+      isCurrentLive(sched.liveStart, sched.liveEnd);
 
     const card = document.createElement("div");
     card.className = `p-4 rounded-xl border transition-all duration-300 flex flex-col justify-between ${
@@ -385,42 +397,70 @@ function initSchedule() {
         : "bg-white/5 border-white/5 hover:border-white/20"
     }`;
 
+    const morningTime = sched.isHoliday ? "-- : --" : sched.morning;
+
+    const morningTopic = sched.isHoliday
+      ? "LIBUR LIVE STREAM"
+      : sched.topicMorning;
+
+    const desc = sched.isHoliday
+      ? "Hari ini libur live streaming. Sampai jumpa di jadwal berikutnya!"
+      : sched.desc;
+
+    const nightTitle = sched.isHoliday ? "-" : sched.night;
+    const nightTopic = sched.isHoliday ? "-" : sched.topicNight;
+
     card.innerHTML = `
-      <div class="flex justify-between items-center mb-2.5">
-        <span class="font-bold font-gaming text-xs sm:text-sm ${isToday ? "text-[var(--color-primary)] neon-text-glow" : "text-gray-300"}">${sched.name}</span>
-        ${
-          isLiveNow
-            ? '<span class="badge-tag badge-live">LIVE NOW</span>'
-            : isToday
-              ? `<span class="badge-tag bg-[var(--color-primary)]/20 text-[var(--color-primary)] border border-[var(--color-primary)]/40 text-[9px]">HARI INI</span>`
-              : ""
-        }
+  <div class="flex justify-between items-center mb-2.5">
+    <span class="font-bold font-gaming text-xs sm:text-sm ${
+      isToday ? "text-[var(--color-primary)] neon-text-glow" : "text-gray-300"
+    }">${sched.name}</span>
+
+    ${
+      sched.isHoliday
+        ? `<span class="badge-tag bg-red-500/20 text-red-400 border border-red-500/40 text-[9px]">LIBUR</span>`
+        : isLiveNow
+          ? `<span class="badge-tag badge-live">LIVE NOW</span>`
+          : isToday
+            ? `<span class="badge-tag bg-[var(--color-primary)]/20 text-[var(--color-primary)] border border-[var(--color-primary)]/40 text-[9px]">HARI INI</span>`
+            : ""
+    }
+  </div>
+
+  <div class="space-y-2 flex-grow mb-2.5">
+
+    <!-- Morning -->
+    <div class="flex items-start gap-1.5">
+      <i class="fa-solid fa-sun text-yellow-400 text-[10px] mt-1 shrink-0"></i>
+      <div>
+        <p class="text-[10px] font-bold text-white leading-tight">
+          ${morningTopic}
+        </p>
+        <p class="text-[9px] text-gray-400">
+          ${morningTime}
+        </p>
       </div>
-      
-      <div class="space-y-2 flex-grow mb-2.5">
-        <!-- Morning Stream Info -->
-        <div class="flex items-start gap-1.5">
-          <i class="fa-solid fa-sun text-yellow-400 text-[10px] mt-1 shrink-0"></i>
-          <div>
-            <p class="text-[10px] font-bold text-white leading-tight">Pagi: ${sched.topicMorning}</p>
-            <p class="text-[9px] text-gray-400">${sched.morning}</p>
-          </div>
-        </div>
-        
-        <!-- Night Stream Info -->
-        <div class="flex items-start gap-1.5">
-          <i class="fa-solid fa-moon text-indigo-400 text-[10px] mt-1 shrink-0"></i>
-          <div>
-            <p class="text-[10px] font-bold text-gray-300 leading-tight">${sched.night}</p>
-            <p class="text-[9px] text-gray-500">${sched.topicNight}</p>
-          </div>
-        </div>
+    </div>
+
+    <!-- Night -->
+    <div class="flex items-start gap-1.5">
+      <i class="fa-solid fa-moon text-indigo-400 text-[10px] mt-1 shrink-0"></i>
+      <div>
+        <p class="text-[10px] font-bold text-gray-300 leading-tight">
+          ${nightTitle}
+        </p>
+        <p class="text-[9px] text-gray-500">
+          ${nightTopic}
+        </p>
       </div>
-      
-      <div class="border-t border-white/5 pt-1.5 text-[9px] text-gray-400 italic leading-tight">
-        ${sched.desc}
-      </div>
-    `;
+    </div>
+
+  </div>
+
+  <div class="border-t border-white/5 pt-1.5 text-[9px] text-gray-400 italic leading-tight">
+    ${desc}
+  </div>
+`;
 
     scheduleGrid.appendChild(card);
   });
