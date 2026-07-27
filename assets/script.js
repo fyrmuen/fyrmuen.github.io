@@ -283,10 +283,10 @@ function initSchedule() {
     {
       day: 2,
       name: "Selasa",
-      isHoliday: true, // libur atau enggak
-      morning: "05:30 - 08:00 WIB+",
-      liveStart: "05:30",
-      liveEnd: "08:00",
+      isHoliday: false, // libur atau enggak
+      morning: "03:30 - Adzan Subuh WIB+",
+      liveStart: "03:30",
+      liveEnd: "05:00",
       topicMorning: "Racing Master (Rutin)",
       night: "Malam: Kadang-kadang",
       topicNight: "Game Lain (Jarang RM)",
