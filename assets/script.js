@@ -53,15 +53,22 @@ Terima kasih. `),
     name: "IRMC",
     isHoliday: false, // libur atau enggak
     status: "open",
-    joinType: "website",
-    joinLink: "https://irmc.club/daftar",
-    discord: "https://discord.gg/dfw73c689",
-    rules: ["Change Name : IRMC〆(Name)", "NO Toxic", "NO 18++", "NO SARA"],
-    message: `Halo Admin IRMC 
+    joinType: "whatsapp",
+    // joinLink: "https://irmc.club/daftar",
+    joinLink:
+      "https://wa.me/6287835000003?text=" +
+      encodeURIComponent(`Halo Admin IRMC
 Saya ingin bergabung ke Club IRMC.
 Saya mendapatkan informasi Open Member dari TikTok Bang Kaze Rush.
 Mohon informasi lebih lanjut mengenai proses pendaftaran.
-Terima kasih. `,
+Terima kasih. `),
+    discord: "https://discord.gg/dfw73c689",
+    rules: ["Change Name : IRMC〆(Name)", "NO Toxic", "NO 18++", "NO SARA"],
+    //     message: `Halo Admin IRMC
+    // Saya ingin bergabung ke Club IRMC.
+    // Saya mendapatkan informasi Open Member dari TikTok Bang Kaze Rush.
+    // Mohon informasi lebih lanjut mengenai proses pendaftaran.
+    // Terima kasih. `,
   },
 };
 
