@@ -29,16 +29,13 @@ const clubs = {
   empire: {
     img: "assets/img/empiregt.png",
     name: "Empire GT",
-    isHoliday: false, // libur atau enggak
     status: "open",
     joinType: "whatsapp",
     joinLink:
       "https://wa.me/6285798047422?text=" +
-      encodeURIComponent(`Halo Admin Empire GT 
-Saya ingin bergabung ke Club Empire GT.
-Saya mendapatkan informasi Open Member dari TikTok Bang Kaze Rush.
-Mohon informasi lebih lanjut mengenai proses pendaftaran.
-Terima kasih. `),
+      encodeURIComponent(
+        `Halo Admin Empire GT \nSaya ingin bergabung ke Club Empire GT.\nSaya mendapatkan informasi Open Member dari TikTok Bang Kaze Rush.\nMohon informasi lebih lanjut mengenai proses pendaftaran.\nTerima kasih.`,
+      ),
     discord: "https://discord.gg/NSaSaUVBq",
     rules: [
       "Change Name : GT1“(name)",
@@ -47,28 +44,18 @@ Terima kasih. `),
       "Wajib Menjalankan Misi Klub",
     ],
   },
-
   irmc: {
     img: "assets/img/irmc.png",
     name: "IRMC",
-    isHoliday: false, // libur atau enggak
     status: "open",
     joinType: "whatsapp",
-    // joinLink: "https://irmc.club/daftar",
     joinLink:
       "https://wa.me/6287835000003?text=" +
-      encodeURIComponent(`Halo Admin IRMC
-Saya ingin bergabung ke Club IRMC.
-Saya mendapatkan informasi Open Member dari TikTok Bang Kaze Rush.
-Mohon informasi lebih lanjut mengenai proses pendaftaran.
-Terima kasih. `),
+      encodeURIComponent(
+        `Halo Admin IRMC\nSaya ingin bergabung ke Club IRMC.\nSaya mendapatkan informasi Open Member dari TikTok Bang Kaze Rush.\nMohon informasi lebih lanjut mengenai proses pendaftaran.\nTerima kasih.`,
+      ),
     discord: "https://discord.gg/dfw73c689",
     rules: ["Change Name : IRMC〆(Name)", "NO Toxic", "NO 18++", "NO SARA"],
-    //     message: `Halo Admin IRMC
-    // Saya ingin bergabung ke Club IRMC.
-    // Saya mendapatkan informasi Open Member dari TikTok Bang Kaze Rush.
-    // Mohon informasi lebih lanjut mengenai proses pendaftaran.
-    // Terima kasih. `,
   },
 };
 
@@ -278,196 +265,112 @@ function initSchedule() {
     {
       day: 1,
       name: "Senin",
-      isHoliday: true, // libur atau enggak
-      morning: "19:45 - 22:00 WIB+",
-      liveStart: "19:45",
-      liveEnd: "22:00",
-      topicMorning: "Racing Master (Rutin)",
-      night: "Malam: Kadang-kadang",
-      topicNight: "Game Lain (Jarang RM)",
-      desc: "Live rutin pagi. Malam kondisional.",
+      isHoliday: false,
+      time: "Pagi - Selesai",
+      topic: "Racing Master (Rutin)",
+      desc: "Pagi selalu RM. Malam opsional (MMORPG/Game Kompetitif/RM).",
     },
     {
       day: 2,
       name: "Selasa",
-      isHoliday: false, // libur atau enggak
-      morning: "03:30 - Adzan Subuh WIB+",
-      liveStart: "03:30",
-      liveEnd: "05:00",
-      topicMorning: "Racing Master (Rutin)",
-      night: "Malam: Kadang-kadang",
-      topicNight: "Game Lain (Jarang RM)",
-      desc: "Live rutin pagi. Malam kondisional.",
+      isHoliday: false,
+      time: "Pagi - Selesai",
+      topic: "Racing Master (Rutin)",
+      desc: "Pagi selalu RM. Malam opsional (MMORPG/Game Kompetitif/RM).",
     },
     {
       day: 3,
       name: "Rabu",
-      isHoliday: false, // libur atau enggak
-      morning: "05:30 - 08:00 WIB+",
-      liveStart: "05:30",
-      liveEnd: "08:00",
-      topicMorning: "Racing Master (Rutin)",
-      night: "Malam: Kadang-kadang",
-      topicNight: "Game Lain (Jarang RM)",
-      desc: "Live rutin pagi. Malam kondisional.",
+      isHoliday: false,
+      time: "Pagi - Selesai",
+      topic: "Racing Master (Rutin)",
+      desc: "Pagi selalu RM. Malam opsional (MMORPG/Game Kompetitif/RM).",
     },
     {
       day: 4,
       name: "Kamis",
-      isHoliday: false, // libur atau enggak
-      morning: "05:30 - 08:00 WIB+",
-      liveStart: "05:30",
-      liveEnd: "08:00",
-      topicMorning: "Racing Master (Rutin)",
-      night: "Malam: Kadang-kadang",
-      topicNight: "Game Lain (Jarang RM)",
-      desc: "Live rutin pagi. Malam kondisional.",
+      isHoliday: true,
+      time: "Pagi - Selesai",
+      topic: "Racing Master (Rutin)",
+      desc: "Pagi selalu RM. Malam opsional (MMORPG/Game Kompetitif/RM).",
     },
     {
       day: 5,
       name: "Jumat",
-      isHoliday: false, // libur atau enggak
-      morning: "05:30 - 08:00 WIB+",
-      liveStart: "05:30",
-      liveEnd: "08:00",
-      topicMorning: "Racing Master (Rutin)",
-      night: "Malam: Kadang-kadang",
-      topicNight: "Game Lain (Jarang RM)",
-      desc: "Live rutin pagi. Malam kondisional.",
+      isHoliday: false,
+      time: "Pagi - Selesai",
+      topic: "Racing Master (Rutin)",
+      desc: "Pagi selalu RM. Malam opsional (MMORPG/Game Kompetitif/RM).",
     },
     {
       day: 6,
       name: "Sabtu",
-      isHoliday: false, // libur atau enggak
-      morning: "15:30 - 00:00 WIB+",
-      liveStart: "15:30",
-      liveEnd: "00:00",
-      topicMorning: "Racing Master (Rutin)",
-      night: "Malam: Kadang-kadang",
-      topicNight: "Racing Master / Game Lain",
-      desc: "Weekend: Kadang ekstra live RM!",
+      isHoliday: false,
+      time: "Sore - Selesai",
+      topic: "Racing Master / Game Lain",
+      desc: "Kadang extra live RM tergantung sikon, atau game lain.",
     },
     {
       day: 0,
       name: "Minggu",
-      isHoliday: false, // libur atau enggak
-      morning: "05:30 - 08:00 WIB+",
-      liveStart: "05:30",
-      liveEnd: "08:00",
-      topicMorning: "Racing Master (Rutin)",
-      night: "Malam: Kadang-kadang",
-      topicNight: "Racing Master / Game Lain",
-      desc: "Weekend: Kadang ekstra live RM!",
+      isHoliday: false,
+      time: "Pagi - Selesai",
+      topic: "Racing Master / Game Lain",
+      desc: "Kadang extra live RM tergantung sikon, atau game lain.",
     },
   ];
-
-  function isCurrentLive(start, end) {
-    const now = new Date();
-
-    const currentMinutes = now.getHours() * 60 + now.getMinutes();
-
-    const [startH, startM] = start.split(":").map(Number);
-    const [endH, endM] = end.split(":").map(Number);
-
-    const startMinutes = startH * 60 + startM;
-    const endMinutes = endH * 60 + endM;
-
-    // kalau lewat tengah malam
-    if (endMinutes < startMinutes) {
-      return currentMinutes >= startMinutes || currentMinutes < endMinutes;
-    }
-
-    return currentMinutes >= startMinutes && currentMinutes < endMinutes;
-  }
 
   const scheduleGrid = document.getElementById("schedule-grid");
   if (!scheduleGrid) return;
 
   const currentDay = new Date().getDay(); // 0 = Minggu, 1 = Senin, dst.
-  const currentHour = new Date().getHours();
-
   scheduleGrid.innerHTML = "";
 
   scheduleData.forEach((sched) => {
     const isToday = sched.day === currentDay;
-
-    // Check if morning stream is active (00:00 - 08:00 WIB)
-    const isLiveNow =
-      !sched.isHoliday &&
-      isToday &&
-      isCurrentLive(sched.liveStart, sched.liveEnd);
+    const isLibur = sched.isHoliday;
 
     const card = document.createElement("div");
     card.className = `p-4 rounded-xl border transition-all duration-300 flex flex-col justify-between ${
-      isToday
+      isToday && !isLibur
         ? "bg-gradient-to-br from-white/10 to-white/5 border-[var(--color-primary)] neon-border-glow translate-y-[-2px] scale-[1.02] z-10"
         : "bg-white/5 border-white/5 hover:border-white/20"
     }`;
 
-    const morningTime = sched.isHoliday ? "-- : --" : sched.morning;
-
-    const morningTopic = sched.isHoliday
-      ? "LIBUR LIVE STREAM"
-      : sched.topicMorning;
-
-    const desc = sched.isHoliday
+    const displayTime = isLibur ? "-- : --" : sched.time;
+    const displayTopic = isLibur ? "LIBUR LIVE STREAM" : sched.topic;
+    const displayDesc = isLibur
       ? "Hari ini libur live streaming. Sampai jumpa di jadwal berikutnya!"
       : sched.desc;
 
-    const nightTitle = sched.isHoliday ? "-" : sched.night;
-    const nightTopic = sched.isHoliday ? "-" : sched.topicNight;
-
     card.innerHTML = `
-  <div class="flex justify-between items-center mb-2.5">
-    <span class="font-bold font-gaming text-xs sm:text-sm ${
-      isToday ? "text-[var(--color-primary)] neon-text-glow" : "text-gray-300"
-    }">${sched.name}</span>
-
-    ${
-      sched.isHoliday
-        ? `<span class="badge-tag bg-red-500/20 text-red-400 border border-red-500/40 text-[9px]">LIBUR</span>`
-        : isLiveNow
-          ? `<span class="badge-tag badge-live">LIVE NOW</span>`
-          : isToday
-            ? `<span class="badge-tag bg-[var(--color-primary)]/20 text-[var(--color-primary)] border border-[var(--color-primary)]/40 text-[9px]">HARI INI</span>`
-            : ""
-    }
-  </div>
-
-  <div class="space-y-2 flex-grow mb-2.5">
-
-    <!-- Morning -->
-    <div class="flex items-start gap-1.5">
-      <i class="fa-solid fa-sun text-yellow-400 text-[10px] mt-1 shrink-0"></i>
-      <div>
-        <p class="text-[10px] font-bold text-white leading-tight">
-          ${morningTopic}
-        </p>
-        <p class="text-[9px] text-gray-400">
-          ${morningTime}
-        </p>
+      <div class="flex justify-between items-center mb-2.5">
+        <span class="font-bold font-gaming text-xs sm:text-sm ${isToday && !isLibur ? "text-[var(--color-primary)] neon-text-glow" : "text-gray-300"}">
+          ${sched.name}
+        </span>
+        ${
+          isLibur
+            ? `<span class="badge-tag bg-red-500/20 text-red-400 border border-red-500/40 text-[9px]">LIBUR</span>`
+            : isToday
+              ? `<span class="badge-tag bg-[var(--color-primary)]/20 text-[var(--color-primary)] border border-[var(--color-primary)]/40 text-[9px]">HARI INI</span>`
+              : ""
+        }
       </div>
-    </div>
 
-    <!-- Night -->
-    <div class="flex items-start gap-1.5">
-      <i class="fa-solid fa-moon text-indigo-400 text-[10px] mt-1 shrink-0"></i>
-      <div>
-        <p class="text-[10px] font-bold text-gray-300 leading-tight">
-          ${nightTitle}
-        </p>
-        <p class="text-[9px] text-gray-500">
-          ${nightTopic}
-        </p>
+      <div class="space-y-2 flex-grow mb-2.5">
+        <div class="flex items-start gap-1.5">
+          <i class="fa-solid fa-clock text-[var(--color-primary)] text-[10px] mt-1 shrink-0"></i>
+          <div>
+            <p class="text-[10px] font-bold text-white leading-tight">${displayTopic}</p>
+            <p class="text-[9px] text-gray-400">${displayTime}</p>
+          </div>
+        </div>
       </div>
-    </div>
 
-  </div>
-
-  <div class="border-t border-white/5 pt-1.5 text-[9px] text-gray-400 italic leading-tight">
-    ${desc}
-  </div>
-`;
+      <div class="border-t border-white/5 pt-1.5 text-[9px] text-gray-400 italic leading-tight">
+        ${displayDesc}
+      </div>
+    `;
 
     scheduleGrid.appendChild(card);
   });
