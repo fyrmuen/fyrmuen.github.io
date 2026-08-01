@@ -85,7 +85,7 @@
 
     <!-- 1. HEADER SETTINGS & MUSIC PLAYER BAR -->
     <header
-      class="w-full max-w-7xl mx-auto px-6 py-4 flex flex-wrap items-center justify-between gap-4 relative z-40"
+      class="w-full max-w-7xl mx-auto px-6 py-4 flex flex-wrap items-center justify-between gap-0 md:gap-4 relative z-40"
     >
       <!-- Left: Logo/Home -->
       <div class="flex items-center gap-2">
@@ -100,18 +100,19 @@
           <source src="assets/img/wlee.mp4" type="video/mp4" />
         </video>
         <span
+          title="Angin. Ngebut, adrenalin, kompetitif, dan penuh tawa. Itulah Kaze Rush."
           class="font-gaming font-black text-sm tracking-widest bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent"
-          >Kaze Rush</span
+          >Kaze <span class="hidden md:block">Rush</span></span
         >
       </div>
 
       <!-- Right: Settings & Synthesizer controls -->
       <div
-        class="flex flex-wrap items-center gap-3 bg-white/5 backdrop-blur-md border border-white/5 rounded-2xl p-2 px-3 sm:px-4 text-xs"
+        class="flex flex-col md:flex-row items-center gap-3 bg-white/5 backdrop-blur-md border border-white/5 rounded-2xl p-2 px-3 sm:px-4 text-xs"
       >
         <!-- Theme Dropdown -->
         <div
-          class="flex items-center gap-1.5 border-r border-white/10 pr-3 mr-1"
+          class="flex items-center gap-1.5 border-r border-transparent md:border-white/10 pr-3 mr-1"
         >
           <i class="fa-solid fa-palette text-[var(--color-primary)]"></i>
           <select
@@ -161,7 +162,8 @@
           ></i>
           <span
             class="font-bold font-gaming text-[10px] bgm-status text-gray-300"
-            >SYNTH BGM: OFF</span
+          >
+            : OFF</span
           >
           <!-- Sound Wave Visualizer Animation -->
           <div id="bgm-visualizer" class="flex items-end h-3.5">
@@ -181,7 +183,8 @@
     >
       <!-- Interactive Mascot Container -->
       <div
-        class="relative mascot-container w-44 h-44 md:w-52 md:h-52 cursor-pointer mb-6"
+        title="Melaju secepat angin"
+        class="relative mascot-container w-44 h-44 md:w-52 md:h-52 cursor-pointer mb-6 mt-8"
       >
         <!-- Speech Bubble Quote (interactive) -->
         <div id="mascot-bubble" class="speech-bubble">

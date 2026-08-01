@@ -464,7 +464,7 @@ function initBgm() {
         "bg-[var(--color-primary)]/20",
         "border-[var(--color-primary)]",
       );
-      bgmBtn.querySelector(".bgm-status").textContent = "SYNTH BGM: ON";
+      bgmBtn.querySelector(".bgm-status").textContent = ": ON";
       visualizer.classList.add("visualizer-playing");
       playClickSound();
     } else {
@@ -475,7 +475,7 @@ function initBgm() {
         "bg-[var(--color-primary)]/20",
         "border-[var(--color-primary)]",
       );
-      bgmBtn.querySelector(".bgm-status").textContent = "SYNTH BGM: OFF";
+      bgmBtn.querySelector(".bgm-status").textContent = ": OFF";
       visualizer.classList.remove("visualizer-playing");
       playClickSound();
     }
