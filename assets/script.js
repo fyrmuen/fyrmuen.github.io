@@ -48,12 +48,12 @@ const clubs = {
     img: "assets/img/irmc.png",
     name: "IRMC",
     status: "open",
-    joinType: "whatsapp",
-    joinLink:
-      "https://wa.me/6287835000003?text=" +
-      encodeURIComponent(
-        `Halo Admin IRMC\nSaya ingin bergabung ke Club IRMC.\nSaya mendapatkan informasi Open Member dari TikTok Bang Kaze Rush.\nMohon informasi lebih lanjut mengenai proses pendaftaran.\nTerima kasih.`,
-      ),
+    joinType: "website",
+    joinLink: "https://irmc.club/daftar",
+    // "https://wa.me/6287835000003?text=" +
+    // encodeURIComponent(
+    //   `Halo Admin IRMC\nSaya ingin bergabung ke Club IRMC.\nSaya mendapatkan informasi Open Member dari TikTok Bang Kaze Rush.\nMohon informasi lebih lanjut mengenai proses pendaftaran.\nTerima kasih.`,
+    // ),
     discord: "https://discord.gg/dfw73c689",
     rules: ["Change Name : IRMC〆(Name)", "NO Toxic", "NO 18++", "NO SARA"],
   },
