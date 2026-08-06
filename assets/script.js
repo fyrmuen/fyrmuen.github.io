@@ -298,7 +298,7 @@ function initSchedule() {
       day: 5,
       name: "Jumat",
       isHoliday: false,
-      time: "Pagi - Selesai",
+      time: "Malam - Selesai",
       topic: "Racing Master (Rutin)",
       desc: "Pagi selalu RM. Malam opsional (MMORPG/Game Kompetitif/RM).",
     },
