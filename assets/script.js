@@ -57,6 +57,24 @@ const clubs = {
     discord: "https://discord.gg/dfw73c689",
     rules: ["Change Name : IRMC〆(Name)", "NO Toxic", "NO 18++", "NO SARA"],
   },
+  ram: {
+    img: "assets/img/ram.png",
+    name: "RAM",
+    status: "open",
+    joinType: "whatsapp",
+    joinLink:
+      "https://wa.me/6287868672472?text=" +
+      encodeURIComponent(
+        `Halo Admin RAM\nSaya ingin bergabung ke Club RAM.\nSaya mendapatkan informasi Open Member dari TikTok Bang Kaze Rush.\nMohon informasi lebih lanjut mengenai proses pendaftaran.\nTerima kasih.`,
+      ),
+    discord: "https://discord.gg/dfw73c689",
+    rules: [
+      "Change Name : RAM•(Name)",
+      "No SARA",
+      "Aktif",
+      "Wajib Menjalankan Club Duel & Endurance 12x",
+    ],
+  },
 };
 
 // Initialize elements once DOM is loaded
