@@ -63,7 +63,7 @@ const clubs = {
     status: "open",
     joinType: "whatsapp",
     joinLink:
-      "https://wa.me/6287868672472?text=" +
+      "https://wa.me/628111049889?text=" +
       encodeURIComponent(
         `Halo Admin RAM\nSaya ingin bergabung ke Club RAM.\nSaya mendapatkan informasi Open Member dari TikTok Bang Kaze Rush.\nMohon informasi lebih lanjut mengenai proses pendaftaran.\nTerima kasih.`,
       ),
