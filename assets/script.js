@@ -67,7 +67,7 @@ const clubs = {
       encodeURIComponent(
         `Halo Admin RAM\nSaya ingin bergabung ke Club RAM.\nSaya mendapatkan informasi Open Member dari TikTok Bang Kaze Rush.\nMohon informasi lebih lanjut mengenai proses pendaftaran.\nTerima kasih.`,
       ),
-    discord: "https://discord.gg/dfw73c689",
+    discord: "http://discord.gg/ramclub",
     rules: [
       "Change Name : RAM•(Name)",
       "No SARA",
