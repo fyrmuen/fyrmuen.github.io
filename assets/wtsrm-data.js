@@ -18,7 +18,7 @@ const wtsrmAccounts = {
     winRate: "85.2%",
     paymentMethods: ["QRIS", "Transfer bank", "E-wallet"],
     image: "../assets/img/kazerush.png",
-    createDate: "2024-10-19",
+    createDate: "2026-10-19",
     gallery: {
       cars: {
         extreme: [

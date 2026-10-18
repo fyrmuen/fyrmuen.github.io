@@ -27,7 +27,10 @@ function accountCard(account) {
         <span class="wtsrm-status ${account.status}">${formatStatus(account.status)}</span>
       </div>
       <div class="wtsrm-card-body">
-        <p class="wtsrm-eyebrow">${account.server} SERVER · ${account.security}</p>
+        <div class="flex flex-row-reverse justify-between">
+          <p class="text-[8px] mb-2 text-gray-500">Tgl ${account.createDate}</p>
+          <p class="wtsrm-eyebrow">${account.server} SERVER · ${account.security}</p>
+        </div>
         <h2>${account.title}</h2>
         <div class="wtsrm-card-meta">
           <span><i class="fa-solid fa-fingerprint"></i>id: ${account.idGame}</span>
