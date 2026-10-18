@@ -2,9 +2,21 @@ function formatStatus(status) {
   return status === "available" ? "AVAILABLE" : "SOLD";
 }
 
+function getActiveAccounts() {
+  return Object.values(wtsrmAccounts).filter((account) => account.active);
+}
+
+function applySavedTheme() {
+  const themes = ["red", "purple", "emerald", "blue"];
+  const savedTheme = localStorage.getItem("xmenz-theme") || "red";
+  document.body.dataset.theme = themes.includes(savedTheme)
+    ? savedTheme
+    : "red";
+}
+
 function whatsappUrl(account) {
   const message = `Halo Kak, saya melihat tawaran akun Racing Master yang dipromosikan oleh bang Kaze Rush dan tertarik dengan akun *${account.title} (${account.id})*. \nApakah masih tersedia?`;
-  return `https://wa.me/6288902341766?text=${encodeURIComponent(message)}`;
+  return `https://wa.me/6285722029357?text=${encodeURIComponent(message)}`;
 }
 
 function accountCard(account) {
@@ -203,17 +215,22 @@ function detailMarkup(account) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+  applySavedTheme();
   const catalog = document.getElementById("wtsrm-catalog");
   const detail = document.getElementById("wtsrm-detail");
-  if (catalog)
-    catalog.innerHTML = Object.values(wtsrmAccounts).map(accountCard).join("");
+  if (catalog) {
+    const activeAccounts = getActiveAccounts();
+    catalog.innerHTML = activeAccounts.length
+      ? activeAccounts.map(accountCard).join("")
+      : '<p class="wtsrm-note wtsrm-empty-state">Belum ada akun aktif.</p>';
+  }
   if (detail) {
     const accountId = window.location.pathname.split("/").filter(Boolean).pop();
     const account = wtsrmAccounts[accountId];
-    detail.innerHTML = account
+    detail.innerHTML = account?.active
       ? detailMarkup(account)
-      : `<div class="wtsrm-panel"><h1>Akun tidak ditemukan</h1><p class="wtsrm-note">Listing yang kamu cari belum tersedia atau sudah dipindahkan.</p><a class="wtsrm-button" href="/wtsrm/">KEMBALI KE KATALOG</a></div>`;
-    if (account) {
+      : `<div class="wtsrm-panel"><h1>Akun tidak tersedia</h1><p class="wtsrm-note">Listing yang kamu cari belum aktif atau sudah dipindahkan.</p><a class="wtsrm-button" href="/wtsrm/">KEMBALI KE KATALOG</a></div>`;
+    if (account?.active) {
       initGalleryTabs();
       initGalleryLightbox();
     }

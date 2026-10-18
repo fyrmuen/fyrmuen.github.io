@@ -106,15 +106,6 @@
         >
       </div>
 
-      <!-- Marketplace link -->
-      <a
-        href="/wtsrm/"
-        class="inline-flex items-center gap-2 px-3 py-2 rounded-xl border border-[var(--color-primary)]/30 bg-[var(--color-primary)]/10 text-[var(--color-primary)] hover:bg-[var(--color-primary)]/20 transition text-[10px] font-gaming font-bold tracking-wider"
-      >
-        <i class="fa-solid fa-store"></i>
-        JUAL AKUN
-      </a>
-
       <!-- Right: Settings & Synthesizer controls -->
       <div
         class="flex flex-col md:flex-row items-center gap-3 bg-white/5 backdrop-blur-md border border-white/5 rounded-2xl p-2 px-3 sm:px-4 text-xs"
@@ -258,7 +249,9 @@
       </p>
 
       <!-- PRIMARY ACTION BUTTONS (Saweria & WhatsApp [Commented Out]) -->
-      <div class="flex justify-center w-full max-w-xs mb-14 mx-auto">
+      <div
+        class="flex flex-col justify-center w-full max-w-xs mb-14 mx-auto gap-2"
+      >
         <!-- SAWERIA BUTTON -->
         <div class="flex flex-col items-center w-full">
           <p class="text-[11px] text-gray-400 mb-2.5">
@@ -285,27 +278,31 @@
           </a>
         </div>
 
-        <!-- WHATSAPP BUY ACCOUNT BUTTON (Komentar - Aktifkan kembali jika diperlukan)
+        <!-- WHATSAPP BUY ACCOUNT BUTTON (Komentar - Aktifkan kembali jika
+        diperlukan) -->
         <div class="flex flex-col items-center">
           <p class="text-[11px] text-gray-400 mb-2.5">
-            <i class="fa-solid fa-car text-green-400 mr-1"></i> Beli akun Racing Master XMenz:
+            <i class="fa-solid fa-car text-green-400 mr-1"></i> Beli akun
+            Racing:
           </p>
           <a
-            href="https://wa.me/6288902341766?text=Hallo%20kak%20Merrie%20saya%20tertarik%20dengan%20akunnya%20kakak%20yang%20di%20promosikan%20di%20live%20nya%20kak%20XMenz%2C%20apakah%20masih%20ada%3F"
-            target="_blank"
-            class="animated-button mask-button w-full py-4 rounded-xl bg-[#121625] text-white flex items-center justify-center gap-3 text-sm font-bold font-gaming border border-green-500/30"
-            style="--border-color: #25D366"
+            href="/wtsrm/"
+            class="animated-button mask-button w-full py-4 rounded-xl bg-[#121625] text-white flex items-center justify-center gap-3 text-sm font-bold font-gaming border border-yellow-500/30"
+            style="--border-color: #25d366"
           >
             <span class="border-line"></span>
             <span class="border-line"></span>
             <span class="border-line"></span>
             <span class="border-line"></span>
             <span class="mask-bg"></span>
-            <i class="fa-brands fa-whatsapp text-2xl text-[#25D366] relative z-10"></i>
-            <span class="relative z-10 text-[#25D366]">WHATSAPP ADMIN</span>
+            <p
+              class="text-[10px] md:text-xs font-gaming font-bold tracking-[0.3em] text-[var(--color-accent)] neon-text-glow mt-2 uppercase"
+            >
+              <i class="fa-solid fa-store"></i>
+              <span>JUAL AKUN</span>
+            </p>
           </a>
         </div>
-        -->
       </div>
     </section>
 
