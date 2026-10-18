@@ -27,7 +27,7 @@ function accountCard(account) {
         <span class="wtsrm-status ${account.status}">${formatStatus(account.status)}</span>
       </div>
       <div class="wtsrm-card-body">
-        <div class="flex flex-row-reverse justify-between">
+        <div class="flex flex-col md:flex-row-reverse justify-between">
           <p class="text-[8px] mb-2 text-gray-500">Tgl ${account.createDate}</p>
           <p class="wtsrm-eyebrow">${account.server} SERVER · ${account.security}</p>
         </div>
