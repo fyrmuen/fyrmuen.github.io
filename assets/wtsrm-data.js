@@ -7,7 +7,7 @@ const wtsrmAccounts = {
     title: "HiMer",
     idGame: "6267375269",
     status: "available", // "available" atau "sold"
-    price: "Rp 250.000,-",
+    price: "Rp 175.000,-",
     priceType: "nego", // "nego" atau "fixed"
     server: "SEA",
     loginMethod: "Netease",
